@@ -1,8 +1,5 @@
 import torch 
 from torch import nn
-import torchvision
-import torchvision.transforms as transforms
-from torchvision.datasets import cifar10
 
 #alexne has 8 learnable layers as follows
 # ReLU(Conv2D) -> MaxPool -> ReLU(Conv2D) -> MaxPool -> ReLU(Conv2D) -> ReLU(Conv2D) -> ReLU(Conv2D) -> MaxPool

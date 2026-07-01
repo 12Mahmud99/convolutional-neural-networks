@@ -1,7 +1,7 @@
 import torch 
 from torch import nn
 
-class AlexNet(nn.Module):
+class BasicNet(nn.Module):
     def __init__(self):
         self.layers=nn.Sequential(nn.Conv2D(batch_size=64, in_channels=3, out_channels=96, 
             kernel_size=(11,11), stride=4),

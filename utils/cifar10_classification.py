@@ -24,3 +24,4 @@ class BasicNet(nn.Module):
         
     def forward(self,x):
         return self.layers(x)        
+    

@@ -27,3 +27,5 @@ class AlexNet(nn.Module):
             nn.Linear(4096,4096),
             nn.Linear(4096,1000)
             nn.Linear(1000,10))
+    def forward():
+        pass

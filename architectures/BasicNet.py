@@ -10,4 +10,4 @@ class BasicNet(nn.Module):
             nn.Linear(1000,10))
         
     def forward(self,x):
-        return self.layers(x)
+        return self.layers(x)        

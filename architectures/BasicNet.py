@@ -5,7 +5,7 @@ class BasicNet(nn.Module):
         self.layers=nn.Sequential(nn.Conv2d(batch_size=64, in_channels=3, out_channels=96, 
             kernel_size=(11,11), stride=4),
             nn.ReLU(), 
-            nn.MaxPool((3,3), stride=2),
+            nn.MaxPool2d((3,3), stride=2),
             nn.Linear(4096,1000),
             nn.Linear(1000,10))
         

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-def train(model, dataloader_train,dataload_val, le=1e-3, epochs=100, batch_size=64, patience=100):
+def train(model, dataloader_train,dataload_val):
     model.train()
     count = 0
     optimizer = torch.optim.SGD() #minibatch

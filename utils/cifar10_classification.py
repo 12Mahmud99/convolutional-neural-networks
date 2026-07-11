@@ -1,27 +1,32 @@
 import torch
 import torch.nn as nn
 
-def train(model, dataloader_train,dataload_val):
+def train(model, dataloader_train, dataloader_val=None):
     model.train()
-    count = 0
-    optimizer = torch.optim.SGD() #minibatch
-    for image, label in enumerate(dataloader_train):
-        optimizer.zero_grads() #zero out the gradients
-        output = model(image)
-
-        loss = torch.nn.functional.CrossEntropy(output, label)
-        loss.backward()# computer gradients
+    optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+    
+    for batch_index, (image, label) in enumerate(dataloader_train):
+        optimizer.zero_grad() 
+        output = model(image) 
+        
+        loss = torch.nn.functional.cross_entropy(output, label) 
+        loss.backward()
         optimizer.step()
 
-class BasicNet(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.layers=nn.Sequential(nn.Conv2d(in_channels=3, out_channels=96, kernel_size=(11,11), stride=4),
-            nn.ReLU(), 
-            nn.MaxPool2d((3,3), stride=2),
-            nn.Linear(4096,1000),
-            nn.Linear(1000,10))
-        
-    def forward(self,x):
-        return self.layers(x)        
-    
+def test(model, dataset_test):
+    model.eval() 
+    for batch_index, (image, label) in enumerate(dataset_test):
+        with torch.no_grad():
+            output = model(image)
+
+            num_images_to_show = min(10, image.size(0))
+            for i in range(num_images_to_show):
+                img_tensor = image[i].cpu()
+                
+                img_numpy = img_tensor.permute(1, 2, 0).numpy()
+                
+                plt.imshow(img_numpy)
+                plt.axis('off')  
+                plt.show()
+                
+                print(f"Predicted Class: {torch.argmax(output[i]).item()}")

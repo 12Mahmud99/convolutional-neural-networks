@@ -9,11 +9,11 @@ def train(model, dataloader_train, dataloader_val=None, epochs=1):
     for epoch in range(epochs):
         for batch_index, (image, label) in enumerate(dataloader_train):
             optimizer.zero_grad() 
-        output = model(image) 
-        
-        loss = torch.nn.functional.cross_entropy(output, label) 
-        loss.backward()
-        optimizer.step()
+            output = model(image) 
+            
+            loss = torch.nn.functional.cross_entropy(output, label) 
+            loss.backward()
+            optimizer.step()
 
 def test(model, dataset_test):
     model.eval() 

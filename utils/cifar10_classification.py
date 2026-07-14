@@ -1,12 +1,14 @@
 import torch
 import torch.nn as nn
+import matplotlib.pyplot as plt
 
-def train(model, dataloader_train, dataloader_val=None):
+def train(model, dataloader_train, dataloader_val=None, epochs=1):
     model.train()
     optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
     
-    for batch_index, (image, label) in enumerate(dataloader_train):
-        optimizer.zero_grad() 
+    for epoch in range(epochs):
+        for batch_index, (image, label) in enumerate(dataloader_train):
+            optimizer.zero_grad() 
         output = model(image) 
         
         loss = torch.nn.functional.cross_entropy(output, label) 

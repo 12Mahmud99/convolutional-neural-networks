@@ -50,7 +50,8 @@ class AlexNet(nn.Module):
             nn.Linear(4096,4096),
             
             #thirds classifier layer
-            nn.Linear(4096,1000) #output size is teh number of classes
+            nn.Linear(4096,1000), #output size is teh number of classes
+            nn.Softmax()
         
         )
     def forward(self, x):

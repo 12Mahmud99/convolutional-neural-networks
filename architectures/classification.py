@@ -18,7 +18,9 @@ class BasicNet(nn.Module):
 class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()
-        self.layers=nn.Sequential()
+        self.layers=nn.Sequential(
+            nn.Conv2d(in_channel=3, out_channels=96)
+        )
     def forward(self, x):
         
 

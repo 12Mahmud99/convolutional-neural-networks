@@ -42,6 +42,7 @@ class AlexNet(nn.Module):
             nn.Linear(6*6*256,4096),
             
             #second classifier layer
+            nn.Linear(4096,4096),
         
         )
     def forward(self, x):

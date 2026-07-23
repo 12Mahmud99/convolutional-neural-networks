@@ -49,6 +49,7 @@ class AlexNet(nn.Module):
             
             #second classifier layer
             nn.Linear(4096,4096),
+            nn.ReLU(), #cuz the weights could make it negative again
                        
             #thirds classifier layer
             nn.Linear(4096,1000), #output size is teh number of classes

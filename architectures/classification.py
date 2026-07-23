@@ -19,7 +19,7 @@ class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()
         self.layers=nn.Sequential(
-            #First layer
+            #first layer
             nn.Conv2d(in_channel=3, out_channels=96, kernel_size=(11,11),stride=4),
             nn.MaxPool(kernel_size=(3,3),stride=2),
             

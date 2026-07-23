@@ -19,13 +19,15 @@ class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()
         self.layers=nn.Sequential(
-            #first layer
+            #first conv layer
             nn.Conv2d(in_channel=3, out_channels=96, kernel_size=(11,11),stride=4, padding=0),
             nn.MaxPool(kernel_size=(3,3),stride=2),
             
-            #second layers
+            #second conv layer
             nn.Cond2d(in_channels=3, out_channels=256, kernel_size=(5,5), stride=2, padding=2)
             nn.MaxPool(kernel_size=(3,3), stride=2)
+            
+            #third cond layer
         )
     def forward(self, x):
         

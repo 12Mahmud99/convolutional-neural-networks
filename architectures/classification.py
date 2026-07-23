@@ -52,9 +52,7 @@ class AlexNet(nn.Module):
             nn.ReLU(), #cuz the weights could make it negative again
                        
             #thirds classifier layer
-            nn.Linear(4096,1000), #output size is teh number of classes
-            nn.CrossEntropyLoss()
-        
+            nn.Linear(4096,1000), #output size is teh number of classes        
         )
     def forward(self, x):
         return self.layers(x)

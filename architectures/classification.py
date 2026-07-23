@@ -55,6 +55,7 @@ class AlexNet(nn.Module):
         
         )
     def forward(self, x):
+        return nn.layers(x)
         
 
 ##VGG-16 

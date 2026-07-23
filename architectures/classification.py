@@ -25,7 +25,7 @@ class AlexNet(nn.Module):
             
             #second layers
             nn.Cond2d(in_channels=3, out_channels=256, kernel_size=(5,5), stride=2, padding=2)
-            
+            nn.MaxPool(kernel_size=(3,3), stride=2)
         )
     def forward(self, x):
         

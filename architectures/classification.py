@@ -35,6 +35,7 @@ class AlexNet(nn.Module):
         
             #fifth conv layer
             nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1),                   
+            nn.MaxPool(kernel_size=(3,3),stride=2),
         
         )
     def forward(self, x):

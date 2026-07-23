@@ -25,7 +25,7 @@ class AlexNet(nn.Module):
             nn.MaxPool(kernel_size=(3,3),stride=2),
             
             #second conv layer
-            nn.Conv2d(in_channels=96, out_channels=256, kernel_size=(5,5), stride=2, padding=2),
+            nn.Conv2d(in_channels=96, out_channels=256, kernel_size=(5,5), stride=1, padding=2),
             nn.ReLU(),
             nn.MaxPool(kernel_size=(3,3), stride=2),
             
@@ -49,12 +49,11 @@ class AlexNet(nn.Module):
             
             #second classifier layer
             nn.Linear(4096,4096),
-            nn.ReLU(),
-            
+                       
             #thirds classifier layer
             nn.Linear(4096,1000), #output size is teh number of classes
-            nn.ReLU(),
             nn.Softmax(),
+            nn.CrossEntropyLoss()
         
         )
     def forward(self, x):

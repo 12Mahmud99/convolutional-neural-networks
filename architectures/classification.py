@@ -45,12 +45,15 @@ class AlexNet(nn.Module):
             #first classifier layer
             nn.Flatten(),
             nn.Linear(6*6*256,4096),
+            nn.ReLU(),
             
             #second classifier layer
             nn.Linear(4096,4096),
+            nn.ReLU(),
             
             #thirds classifier layer
             nn.Linear(4096,1000), #output size is teh number of classes
+            nn.ReLU(),
             nn.Softmax(),
         
         )

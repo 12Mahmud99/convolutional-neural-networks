@@ -18,6 +18,7 @@ class BasicNet(nn.Module):
 class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()
+        self.layers=nn.Sequential()
     def forward(self, x):
         
 

@@ -28,7 +28,7 @@ class AlexNet(nn.Module):
             nn.MaxPool(kernel_size=(3,3), stride=2)
             
             #third cond layer
-            nn.Conv2d(in_channels=245, ou)
+            nn.Conv2d(in_channels=245, out_channels=384, kernel_size=(3,3), stride=1, padding=1)
         )
     def forward(self, x):
         

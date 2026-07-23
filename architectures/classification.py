@@ -34,7 +34,7 @@ class AlexNet(nn.Module):
             nn.ReLU(),
             
             #fourth conv layer
-            nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1),
+            nn.Conv2d(in_channels=384, out_channels=384, kernel_size=(3,3), stride=1, padding=1),
             nn.ReLU(),
             
             #fifth conv layer

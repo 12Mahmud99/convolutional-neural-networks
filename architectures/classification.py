@@ -24,8 +24,8 @@ class AlexNet(nn.Module):
             nn.MaxPool(kernel_size=(3,3),stride=2),
             
             #second conv layer
-            nn.Cond2d(in_channels=96, out_channels=256, kernel_size=(5,5), stride=2, padding=2)
-            nn.MaxPool(kernel_size=(3,3), stride=2)
+            nn.Cond2d(in_channels=96, out_channels=256, kernel_size=(5,5), stride=2, padding=2),
+            nn.MaxPool(kernel_size=(3,3), stride=2),
             
             #third conv layer
             nn.Conv2d(in_channels=245, out_channels=384, kernel_size=(3,3), stride=1, padding=1)
@@ -34,8 +34,7 @@ class AlexNet(nn.Module):
             nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1)
         
             #fifth conv layer
-            nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1)
-                    
+            nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1)                    
         
         )
     def forward(self, x):

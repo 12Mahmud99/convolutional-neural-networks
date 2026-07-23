@@ -31,6 +31,7 @@ class AlexNet(nn.Module):
             nn.Conv2d(in_channels=245, out_channels=384, kernel_size=(3,3), stride=1, padding=1)
 
             #fourth cond layer
+            nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1)
         
         )
     def forward(self, x):

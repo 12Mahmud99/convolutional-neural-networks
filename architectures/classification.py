@@ -38,6 +38,7 @@ class AlexNet(nn.Module):
             nn.MaxPool(kernel_size=(3,3),stride=2),
             
             #first classifier layer
+            nn.Flatten(),
             nn.Linear(256,)
         
         )

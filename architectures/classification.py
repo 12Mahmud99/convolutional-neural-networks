@@ -54,6 +54,8 @@ class AlexNet(nn.Module):
             #thirds classifier layer
             nn.Linear(4096,1000), #output size is teh number of classes        
         )
+        
+        ##the loss function is always in the training loop outside the architectures 
     def forward(self, x):
         return self.layers(x)
         

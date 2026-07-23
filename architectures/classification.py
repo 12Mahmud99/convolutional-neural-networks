@@ -18,6 +18,8 @@ class BasicNet(nn.Module):
 class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()
+        
+        ##TODO bathc normaliztion methods and overfitting protection like dropout 
         self.layers=nn.Sequential(
             #first conv layer
             nn.Conv2d(in_channels=3, out_channels=96, kernel_size=(11,11),stride=4, padding=0),

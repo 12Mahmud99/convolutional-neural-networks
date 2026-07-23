@@ -14,6 +14,12 @@ class BasicNet(nn.Module):
     def forward(self, x):
         return self.layers(x)
 
+##AlexNet
+class AlexNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+    def forward(self, x):
+        
 
 ##VGG-16 
 class VGG16(nn.Module):

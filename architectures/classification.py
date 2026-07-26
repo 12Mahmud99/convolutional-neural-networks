@@ -17,10 +17,7 @@ class BasicNet(nn.Module):
 ##AlexNet
 class AlexNet(nn.Module):
     def __init__(self):
-        super().__init__()
-        
-        ##TODO batch/layer/other normaliztion methods and overfitting protection like dropout 
-        
+        super().__init__()        
         self.layers=nn.Sequential(
             #first conv layer
             nn.Conv2d(in_channels=3, out_channels=96, kernel_size=(11,11),stride=4, padding=0),

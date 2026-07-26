@@ -31,7 +31,7 @@ class AlexNet(nn.Module):
             #second conv layer
             nn.Conv2d(in_channels=96, out_channels=256, kernel_size=(5,5), stride=1, padding=2),
             nn.ReLU(),
-            
+            nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
             nn.MaxPool2d(kernel_size=(3,3), stride=2),
             
             #third conv layer

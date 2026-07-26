@@ -15,7 +15,7 @@ class BasicNet(nn.Module):
     def forward(self, x):
         return self.layers(x)
 
-##AlexNet
+##AlexNet (2012)
 class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()        

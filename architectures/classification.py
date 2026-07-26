@@ -1,6 +1,6 @@
 from torch import nn
 
-#no 
+#BasicNet
 class BasicNet(nn.Module):
     def __init__(self, pooling="max"):
         super().__init__()

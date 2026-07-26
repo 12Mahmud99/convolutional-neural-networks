@@ -43,7 +43,7 @@ class AlexNet(nn.Module):
             #fifth conv layer
             nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1),                   
             nn.ReLU(),
-            nn.MaxPool(kernel_size=(3,3),stride=2),
+            nn.MaxPool2d(kernel_size=(3,3),stride=2),
             
             #first classifier layer
             nn.Flatten(),

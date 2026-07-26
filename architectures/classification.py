@@ -52,6 +52,7 @@ class AlexNet(nn.Module):
             nn.Flatten(),
             nn.Linear(6*6*256,4096),
             nn.ReLU(),
+            nn.Dropout(p=0.5),
             
             #second classifier layer
             nn.Linear(4096,4096),

@@ -73,6 +73,8 @@ class AlexNet32(nn.Module):
     def __init__(self):
         super().__init__()
         #TODO
+    
+    def forward
 
 ##VGG-16 
 class VGG16(nn.Module):

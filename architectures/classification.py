@@ -69,6 +69,7 @@ class AlexNet(nn.Module):
 
 
 ##AlexNet32 ##AlexNet for 32x32 images
+class AlexNet32(nn.Module):
 
 ##VGG-16 
 class VGG16(nn.Module):

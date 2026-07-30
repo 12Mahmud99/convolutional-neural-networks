@@ -75,6 +75,8 @@ class AlexNet32(nn.Module):
         #TODO
     
     def forward(x, self):
+        #TODO
+        pass
 
 ##VGG-16 
 class VGG16(nn.Module):

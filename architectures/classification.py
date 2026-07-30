@@ -74,7 +74,7 @@ class AlexNet32(nn.Module):
         super().__init__()
         #TODO
     
-    def forward(self):
+    def forward(self, x):
         #TODO
         pass
 

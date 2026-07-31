@@ -122,8 +122,7 @@ class AlexNet32(nn.Module):
         return self.layers(x)
     
     def forward(self, x):
-        #TODO
-        pass
+        return self.layers(x)
 
 ##VGG-16 
 class VGG16(nn.Module):

@@ -15,7 +15,7 @@ class BasicNet(nn.Module):
     def forward(self, x):
         return self.layers(x)
 
-##AlexNet (2012)
+##AlexNet (2012) #expected images of size 227x227x3
 class AlexNet227(nn.Module):
     def __init__(self):
         super().__init__()        

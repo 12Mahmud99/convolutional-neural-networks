@@ -70,7 +70,6 @@ class AlexNet227(nn.Module):
 
 ##AlexNet32 ##AlexNet for 32x32 images
 class AlexNet32(nn.Module):
-    class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()        
         self.layers=nn.Sequential(

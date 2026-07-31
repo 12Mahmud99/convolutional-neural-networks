@@ -44,6 +44,7 @@ class AlexNet227(nn.Module):
             nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1),                   
             nn.ReLU(),
             
+            #local reponse normalization mimics lateral inhibition in neuroscience
             nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
             nn.MaxPool2d(kernel_size=(3,3),stride=2),
             

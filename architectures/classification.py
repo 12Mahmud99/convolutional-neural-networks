@@ -113,7 +113,7 @@ class AlexNet32(nn.Module):
             nn.Dropout(p=0.5),
                        
             #thirds classifier layer
-            nn.Linear(4096,1000), #output size is teh number of classes        
+            nn.Linear(4096,10), #output size is teh number of classes        
         )
         
         ##the loss function is always in the training loop outside the architectures 

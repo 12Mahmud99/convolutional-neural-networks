@@ -16,7 +16,7 @@ class BasicNet(nn.Module):
         return self.layers(x)
 
 ##AlexNet (2012)
-class AlexNet(nn.Module):
+class AlexNet227(nn.Module):
     def __init__(self):
         super().__init__()        
         self.layers=nn.Sequential(

@@ -94,7 +94,7 @@ class AlexNet32(nn.Module):
             nn.ReLU(),
             
             #fifth conv layer
-            nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(3,3), stride=1, padding=1),                   
+            nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(1,3), stride=1, padding=1),                   
             nn.ReLU(),
 
             nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),

@@ -80,13 +80,13 @@ class AlexNet32(nn.Module):
             nn.MaxPool2d(kernel_size=(3,3),stride=2),
             
             #second conv layer
-            nn.Conv2d(in_channels=96, out_channels=256, kernel_size=(3,3), stride=1, padding=2),
+            nn.Conv2d(in_channels=96, out_channels=256, kernel_size=(2,2), stride=1, padding=2),
             nn.ReLU(),
             nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
             nn.MaxPool2d(kernel_size=(3,3), stride=2),
             
             #third conv layer
-            nn.Conv2d(in_channels=256, out_channels=384, kernel_size=(3,3), stride=1, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=384, kernel_size=(1,1), stride=1, padding=1),
             nn.ReLU(),
             
             #fourth conv layer

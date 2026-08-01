@@ -118,9 +118,6 @@ class AlexNet32(nn.Module):
         ##the loss function is always in the training loop outside the architectures 
     def forward(self, x):
         return self.layers(x)
-    
-    def forward(self, x):
-        return self.layers(x)
 
 ##VGG-16 
 class VGG16(nn.Module):

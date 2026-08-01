@@ -6,6 +6,8 @@ def train(model, dataloader_train, dataloader_val=None, epochs=1, optimzier="sgd
     model.train()
     if optimizer == "sgd":
         optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+    elif optimizer == "adam":
+        optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     
     for epoch in range(epochs):
         for batch_index, (image, label) in enumerate(dataloader_train):

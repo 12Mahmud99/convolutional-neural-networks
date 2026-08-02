@@ -160,9 +160,8 @@ class BasicResNet(nn.Module):
     def forward(self, x):
         x = self.init_conv(x)   # Shape: [batch, 32, 28, 28]
         x = self.res_block1(x)  # Shape: [batch, 32, 28, 28]
-        x = self.res_block2(x)  # Shape: [batch, 32, 28, 28]
         x = self.gap(x)         # Shape: [batch, 32, 1, 1]
-        x = torch.flatten(x, 1) # Shape: [batch, 32]
+        x = nn.flatten(x, 1) # Shape: [batch, 32]
         return self.fc(x)       # Shape: [batch, 10]
 
 ##ResNet-50

@@ -129,6 +129,7 @@ class VGG16(nn.Module):
         ##TODO
         pass
 
+
 ##ResNet-50
 class ResNet50(nn.Module):
     def __init__(self):

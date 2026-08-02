@@ -135,7 +135,8 @@ class BasicResNet(nn.Module):
         super.__init__()
         pass
     
-    def  
+    def forward(x,self):
+        pass 
 
 ##ResNet-50
 class ResNet50(nn.Module):

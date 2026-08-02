@@ -161,8 +161,8 @@ class BasicResNet(nn.Module):
         x = self.init_conv(x)   
         x = self.res_block1(x)  
         x = self.gap(x)         
-        x = nn.flatten(x, 1) # Shape: [batch, 32]
-        return self.fc(x)       # Shape: [batch, 10]
+        x = nn.flatten(x, 1) 
+        return self.fc(x)       
 
 ##ResNet-50
 class ResNet50(nn.Module):

@@ -142,6 +142,7 @@ class ResidualBlock(nn.Module):
         return nn.ReLU(self.conv_path(x) + x)
 
 ##BasicResNet
+##regulamr BasicNet except the final activation is the output + x
 class BasicResNet(nn.Module):
     def __init__(self, num_classes=10):
         super().__init__()
@@ -152,9 +153,7 @@ class BasicResNet(nn.Module):
         )
         
         self.res_block1 = ResidualBlock(32)
-        
         self.gap = nn.AdaptiveAvgPool2d((1, 1))
-        
         self.fc = nn.Linear(32, num_classes)
 
     def forward(self, x):

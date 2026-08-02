@@ -142,7 +142,7 @@ class ResidualBlock(nn.Module):
         return nn.ReLU(self.conv_path(x) + x)
 
 ##BasicResNet
-##regulamr BasicNet except the final activation is the output + x
+##regular BasicNet except the final activation is the output + x
 class BasicResNet(nn.Module):
     def __init__(self, num_classes=10):
         super().__init__()

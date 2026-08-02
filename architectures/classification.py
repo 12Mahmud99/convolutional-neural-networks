@@ -151,14 +151,11 @@ class BasicResNet(nn.Module):
             nn.ReLU()
         )
         
-        # Stacked residual blocks
         self.res_block1 = MNISTResidualBlock(32)
         self.res_block2 = MNISTResidualBlock(32)
         
-        # Global Average Pooling flattens the spatial dimensions (28x28 -> 1x1)
         self.gap = nn.AdaptiveAvgPool2d((1, 1))
         
-        # Final classification layer
         self.fc = nn.Linear(32, num_classes)
 
     def forward(self, x):

@@ -152,7 +152,6 @@ class BasicResNet(nn.Module):
         )
         
         self.res_block1 = ResidualBlock(32)
-        self.res_block2 = ResidualBlock(32)
         
         self.gap = nn.AdaptiveAvgPool2d((1, 1))
         

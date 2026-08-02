@@ -131,6 +131,9 @@ class VGG16(nn.Module):
 
 ##BasicResNet
 class BasicResNet(nn.Module):
+    def __init__(self):
+        super.__init__()
+        pass
 
 ##ResNet-50
 class ResNet50(nn.Module):

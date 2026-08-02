@@ -129,7 +129,6 @@ class VGG16(nn.Module):
         ##TODO
         pass
 
-
 ##BasicResNet
 
 ##ResNet-50

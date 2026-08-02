@@ -138,7 +138,7 @@ class BasicResNet(nn.Module):
             nn.Linear(46464, 10), 
         )
     def forward(self, x):
-        return self.layers(x)
+        return self.layers(x) + x
 
 ##ResNet-50
 class ResNet50(nn.Module):

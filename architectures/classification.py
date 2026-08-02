@@ -127,7 +127,7 @@ class VGG16(nn.Module):
         ##TODO
         pass
 
-class MNISTResidualBlock(nn.Module):
+class ResidualBlock(nn.Module):
     def __init__(self, channels):
         super().__init__()
         self.conv_path = nn.Sequential(
@@ -151,8 +151,8 @@ class BasicResNet(nn.Module):
             nn.ReLU()
         )
         
-        self.res_block1 = MNISTResidualBlock(32)
-        self.res_block2 = MNISTResidualBlock(32)
+        self.res_block1 = ResidualBlock(32)
+        self.res_block2 = ResidualBlock(32)
         
         self.gap = nn.AdaptiveAvgPool2d((1, 1))
         

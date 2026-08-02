@@ -130,6 +130,7 @@ class VGG16(nn.Module):
         pass
 
 ##BasicResNet
+class BasicResNet(nn.Module):
 
 ##ResNet-50
 class ResNet50(nn.Module):

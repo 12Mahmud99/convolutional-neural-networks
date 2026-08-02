@@ -143,16 +143,31 @@ class MNISTResidualBlock(nn.Module):
 
 ##BasicResNet
 class BasicResNet(nn.Module):
-    def __init__(self, pooling="max"):
+    def __init__(self, num_classes=10):
         super().__init__()
-        self.layers = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=96, kernel_size=(11,11), stride=1),
-            nn.ReLU(), 
-            nn.Flatten(),
-            nn.Linear(46464, 10), 
+        self.init_conv = nn.Sequential(
+            nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(32),
+            nn.ReLU()
         )
+        
+        # Stacked residual blocks
+        self.res_block1 = MNISTResidualBlock(32)
+        self.res_block2 = MNISTResidualBlock(32)
+        
+        # Global Average Pooling flattens the spatial dimensions (28x28 -> 1x1)
+        self.gap = nn.AdaptiveAvgPool2d((1, 1))
+        
+        # Final classification layer
+        self.fc = nn.Linear(32, num_classes)
+
     def forward(self, x):
-        return self.layers(x) + x
+        x = self.init_conv(x)   # Shape: [batch, 32, 28, 28]
+        x = self.res_block1(x)  # Shape: [batch, 32, 28, 28]
+        x = self.res_block2(x)  # Shape: [batch, 32, 28, 28]
+        x = self.gap(x)         # Shape: [batch, 32, 1, 1]
+        x = torch.flatten(x, 1) # Shape: [batch, 32]
+        return self.fc(x)       # Shape: [batch, 10]
 
 ##ResNet-50
 class ResNet50(nn.Module):

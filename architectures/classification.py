@@ -139,7 +139,6 @@ class MNISTResidualBlock(nn.Module):
         )
 
     def forward(self, x):
-        # Element-wise addition of input and transformed features
         return nn.ReLU(self.conv_path(x) + x)
 
 ##BasicResNet

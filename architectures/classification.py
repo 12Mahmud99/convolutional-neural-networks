@@ -127,6 +127,21 @@ class VGG16(nn.Module):
         ##TODO
         pass
 
+class MNISTResidualBlock(nn.Module):
+    def __init__(self, channels):
+        super().__init__()
+        self.conv_path = nn.Sequential(
+            nn.Conv2d(channels, channels, kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(channels),
+            nn.ReLU(),
+            nn.Conv2d(channels, channels, kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(channels)
+        )
+
+    def forward(self, x):
+        # Element-wise addition of input and transformed features
+        return self.relu(self.conv_path(x) + x)
+
 ##BasicResNet
 class BasicResNet(nn.Module):
     def __init__(self, pooling="max"):

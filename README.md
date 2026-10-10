@@ -1,4 +1,4 @@
-## 🚀 Architectural Implementations (Step-by-Step)
+## Architectural Implementations
 
 ### 1. AlexNet (2012)
 * **Paradigm Shift:** The birth of deep learning for computer vision, breaking away from hand-crafted features.
@@ -81,13 +81,3 @@
 | **MobileNet** | Extreme Mobile Efficiency | Ultra-Low | Depthwise Separable Convolutions |
 | **EfficientNet** | Optimized Compound Scaling | Low-Medium | Multi-Dimension NAS Scaling |
 | **ConvNeXt V1/V2** | Modernized Convolutional Layout | Medium | 7 × 7 Depthwise, LayerNorm, GRN Layers |
-
----
-
-## 🛠️ Recommended Implementation Strategy
-
-1. **Phase 1 (The Baseline):** Build `AlexNet` to understand basic channel inflation, flattening, and standard dense categorization.
-2. **Phase 2 (The Highway):** Build `ResNet-16` to witness how identity connections stabilize loss curves during early epochs.
-3. **Phase 3 (The Bottleneck):** Move to `ResNet-64` to learn how 1 × 1 compression bottlenecks save memory at deep layers.
-4. **Phase 4 (The Efficiency Shift):** Build a `MobileNet` module to understand how separating spatial and channel steps alters computational complexity.
-5. **Phase 5 (The Modern Standard):** Adapt your structural ResNet layouts into a `ConvNeXt` architecture to explore how macro-architectural alignments completely close the gap between traditional CNNs and modern Transformers.

@@ -95,7 +95,7 @@ class AlexNet32(nn.Module):
             nn.Conv2d(in_channels=384, out_channels=256, kernel_size=(1,1), stride=1, padding=1),                   
             nn.ReLU(),
 
-            nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
+            nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2), #mostly archaic norm layer
             nn.MaxPool2d(kernel_size=(3,3),stride=2),
             
             #first classifier layer

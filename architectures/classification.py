@@ -101,7 +101,7 @@ class AlexNet32(nn.Module):
             #first classifier layer
             nn.Flatten(),
             nn.Linear(6*6*256,4096),
-            nn.ReLU(),
+            nn.ReLU(), #cuz the weights could make it negative again
             nn.Dropout(p=0.5),
             
             #second classifier layer
